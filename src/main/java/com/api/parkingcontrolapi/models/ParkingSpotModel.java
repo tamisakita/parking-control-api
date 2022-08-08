@@ -1,11 +1,18 @@
 package com.api.parkingcontrolapi.models;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Getter
+@Setter
+@Builder
 @Table(name = "TB_PARKING_SPOT")
 public class ParkingSpotModel implements Serializable {
     private static final long serialVersionUID = 1L;
