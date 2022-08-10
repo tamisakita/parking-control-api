@@ -1,21 +1,20 @@
-package com.api.parkingcontrolapi.service;
+package com.api.parkingcontrolapi.application;
 
-import com.api.parkingcontrolapi.models.ParkingSpotModel;
-import com.api.parkingcontrolapi.repository.ParkingSpotRepository;
+import com.api.parkingcontrolapi.application.repository.jpa.ParkingSpotModel;
+import com.api.parkingcontrolapi.application.repository.ParkingSpotRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ParkingSpotService {
+public class ParkingSpotRepositoryImpl {
 
     final ParkingSpotRepository parkingSpotRepository;
 
-    public ParkingSpotService(ParkingSpotRepository parkingSpotRepository) {
+    public ParkingSpotRepositoryImpl(ParkingSpotRepository parkingSpotRepository) {
         this.parkingSpotRepository = parkingSpotRepository;
     }
 

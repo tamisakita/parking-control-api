@@ -1,4 +1,4 @@
-package com.api.parkingcontrolapi.models;
+package com.api.parkingcontrolapi.application.repository.jpa;
 
 import lombok.*;
 

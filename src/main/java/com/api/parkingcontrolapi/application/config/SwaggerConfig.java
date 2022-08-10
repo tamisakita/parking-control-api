@@ -1,4 +1,4 @@
-package com.api.parkingcontrolapi.config;
+package com.api.parkingcontrolapi.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.api.parkingcontrolapi.config;
+package com.api.parkingcontrolapi.application.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

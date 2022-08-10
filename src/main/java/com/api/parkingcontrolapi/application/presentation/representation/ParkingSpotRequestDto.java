@@ -1,4 +1,4 @@
-package com.api.parkingcontrolapi.dto;
+package com.api.parkingcontrolapi.application.presentation.representation;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ParkingSpotDto {
+public class ParkingSpotRequestDto {
 
     @JsonProperty("parkingSpotNumber")
     private String parkingSpotNumber;
