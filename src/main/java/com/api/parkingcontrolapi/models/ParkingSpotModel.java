@@ -1,8 +1,6 @@
 package com.api.parkingcontrolapi.models;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,35 +11,46 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "TB_PARKING_SPOT")
 public class ParkingSpotModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(nullable = false, unique = true, length = 10)
+    @Column(name = "PARKING_SPOT_NUMBER", nullable = false, unique = true, length = 10)
     private String parkingSpotNumber;
 
-    @Column(nullable = false, unique = true, length = 7)
-    private String LicensePlateCar;
+    @Column(name = "LICENSE_PLATE_CAR",nullable = false, unique = true, length = 7)
+    private String licensePlateCar;
 
-    @Column(nullable = false, length = 70)
+    @Column(name = "BRAND_CAR", nullable = false, length = 70)
     private String brandCar;
 
-    @Column(nullable = false, length = 70)
+    @Column(name = "MODEL_CAR", nullable = false, length = 70)
+    private String modelCar;
+
+    @Column(name = "COLOR_CAR", nullable = false, length = 70)
     private String colorCar;
 
-    @Column(nullable = false)
+    @Column(name = "REGISTRATION_DATE", nullable = false)
     private LocalDateTime registrationDate;
 
-    @Column(nullable = false, length = 130)
+    @Column(name = "RESPONSIBLE_NAME", nullable = false, length = 130)
     private  String responsibleName;
 
-    @Column(nullable = false, length = 30)
+    @Column(name = "APARTMENT", nullable = false, length = 30)
     private String apartment;
 
-    @Column(nullable = false, length = 30)
+    @Column(name = "BLOCK", nullable = false, length = 30)
     private String block;
+
+    @PrePersist
+    public void prePersist() {
+        registrationDate = LocalDateTime.now();
+    }
 }

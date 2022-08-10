@@ -1,29 +1,41 @@
 package com.api.parkingcontrolapi.dto;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParkingSpotDto {
 
-    @NotBlank
+    @JsonProperty("parkingSpotNumber")
     private String parkingSpotNumber;
-    @NotBlank
+
     @Size(max = 7)
-    private String LicensePlateCar;
-    @NotBlank
+    @JsonProperty("licensePlateCar")
+    private String licensePlateCar;
+
+    @JsonProperty("brandCar")
     private String brandCar;
-    @NotBlank
+
+    @JsonProperty("modelCar")
+    private String modelCar;
+
+    @JsonProperty("colorCar")
     private String colorCar;
-    @NotBlank
-    private LocalDateTime registrationDate;
-    @NotBlank
+
+    @JsonProperty("responsibleName")
     private  String responsibleName;
-    @NotBlank
+
+    @JsonProperty("apartment")
     private String apartment;
-    @NotBlank
+
+    @JsonProperty("block")
     private String block;
 }
