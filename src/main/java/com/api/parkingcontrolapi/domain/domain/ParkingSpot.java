@@ -2,6 +2,8 @@ package com.api.parkingcontrolapi.domain.domain;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Builder
@@ -18,4 +20,5 @@ public class ParkingSpot {
     private String responsibleName;
     private String apartment;
     private String block;
+    private LocalDateTime registrationDate;
 }

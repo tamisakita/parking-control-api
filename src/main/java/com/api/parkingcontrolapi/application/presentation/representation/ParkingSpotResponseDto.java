@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,6 +14,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParkingSpotResponseDto {
+
     @JsonProperty("id")
     private Long id;
 
@@ -40,4 +42,7 @@ public class ParkingSpotResponseDto {
 
     @JsonProperty("block")
     private String block;
+
+    @JsonProperty("registationDate")
+    private LocalDateTime registrationDate;
 }

@@ -3,9 +3,7 @@ package com.api.parkingcontrolapi.application.repository.jpa;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,8 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "TB_PARKING_SPOT")
-public class ParkingSpotModel implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class ParkingSpotModel {
 
     @Id
     @Column
@@ -49,8 +46,16 @@ public class ParkingSpotModel implements Serializable {
     @Column(name = "BLOCK", nullable = false, length = 30)
     private String block;
 
+    @Column(name = "update_date_time")
+    private LocalDateTime updateDateTime;
+
     @PrePersist
     public void prePersist() {
         registrationDate = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updateDateTime = LocalDateTime.now();
     }
 }
